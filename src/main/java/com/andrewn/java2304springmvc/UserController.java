@@ -14,7 +14,7 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    //    @GetMapping("/")
+//    @GetMapping("/")
 //    public String index() {
 //        return "{\"message\": \"hello\"}";
 //    }
@@ -25,7 +25,7 @@ public class UserController {
 //    }
 
     @GetMapping("/users")
-    public String getAllUsers() {
-        return String.valueOf(userRepository.findAll());
+    public Iterable<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }
