@@ -1,16 +1,19 @@
-package com.andrewn.java2304springmvc;
+package com.andrewn.java2304springmvc.model;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
+    @Column(name = "login", nullable = false, length = 50)
     String login;
+    @Column(name = "password", nullable = false)
     String password;
+    @Column(name="email", nullable = false, length = 100)
     String email;
     int age;
 

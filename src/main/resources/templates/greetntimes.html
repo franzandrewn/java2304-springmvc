@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting N times</title>
+</head>
+<body>
+<th:block th:each="i: ${#numbers.sequence(0, ntimes-1)}">
+    hello
+</th:block>
+<p th:text="'' + ${hellontimes}"></p>
+</body>
+</html>

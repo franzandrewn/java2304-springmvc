@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Java2304SpringmvcApplication {
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(Java2304SpringmvcApplication.class, args);
 	}

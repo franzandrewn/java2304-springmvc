@@ -1,9 +1,11 @@
-package com.andrewn.java2304springmvc;
+package com.andrewn.java2304springmvc.controller;
 
+import com.andrewn.java2304springmvc.model.User;
+import com.andrewn.java2304springmvc.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -14,18 +16,13 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-//    @GetMapping("/")
-//    public String index() {
-//        return "{\"message\": \"hello\"}";
-//    }
-//
-//    @GetMapping("/asd")
-//    public String returnAsd() {
-//        return "{\"message\": \"asd\"}";
-//    }
-
     @GetMapping("/users")
-    public Iterable<User> getAllUsers() {
+    public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @GetMapping("/users/{age}")
+    public List<User> getUsersByAge(@PathVariable("age") int age) {
+        return userRepository.findByAge(age);
     }
 }
